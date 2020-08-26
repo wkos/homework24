@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista wszystkich produktów</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 th:text="|Lista produktów|">Lista porduktów</h1>
+    <div th:each="product: ${products}">
+        <div class="width70 justify-content-between align-items-center"
+             th:text="${product.getName()}">Nazwa produktu</div>
+        <div class="width20 badge badge-primary badge-pill"
+             th:text="|cena: ${product.getPrice()}|">14</div>
+    </div>
+    <h3 th:text="|Razem: ${priceOfAll}|"></h3>
+</body>
+</html>
