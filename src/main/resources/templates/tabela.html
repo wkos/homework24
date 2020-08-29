@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista wszystkich produktów</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1 th:text="|Lista wszystkich produktów|">Lista wszystkich produktów</h1>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Nazwa</th>
+            <th scope="col">Cena</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-th-each="product: ${products}">
+            <td data-th-text="${product.getName()}">Produkt</td>
+            <td data-th-text="${product.getPrice()}">Cena</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th th:text="Razem">Razem</th>
+            <th th:text="${priceOfAll}">2.56</th>
+        </tr>
+    </tfoot>
+</table>
+</body>
+</html>
