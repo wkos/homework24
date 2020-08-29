@@ -22,11 +22,13 @@
             <td data-th-text="${product.getName()}">Produkt</td>
             <td data-th-text="${product.getPrice()}">Cena</td>
         </tr>
-        <tr data-th-each="price: ${priceOfAll}">
+    </tbody>
+    <tfoot>
+        <tr>
             <th th:text="Razem">Razem</th>
             <th th:text="${priceOfAll}">2.56</th>
         </tr>
-    </tbody>
+    </tfoot>
 </table>
 </body>
 </html>

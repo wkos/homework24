@@ -14,11 +14,8 @@ public class ProductRepository {
         products = new HashSet<>();
     }
 
-    public void add(Product product) {
-        products.add(product);
-    }
 
-    public Set<Product> getAll() {
-        return new HashSet<>(products);
+    public Set<Product> getProducts() {
+        return products;
     }
 }
